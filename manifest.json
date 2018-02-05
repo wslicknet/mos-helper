@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "mos-helper",
+  "description": "update mos easily",
+  "version": "0.1",
+  "icons": {
+    "19": "images/favicon.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/favicon.png"
+    },
+    "default_title": "mos helper",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["myscript.js"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "permissions": ["contextMenus", "tabs"],
+  "background": {
+    "scripts": ["background.js"]
+  }
+
+}
